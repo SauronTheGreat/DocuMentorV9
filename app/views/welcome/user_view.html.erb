@@ -1,0 +1,306 @@
+<%= content_for :head do %>
+
+<%= javascript_include_tag "exclusions/jquery.easing.1.3" %>
+<%= javascript_include_tag "exclusions/jQuery.radmenu" %>
+<%= javascript_include_tag "exclusions/liteaccordion.jquery.min" %>
+<%= javascript_include_tag "exclusions/svgvml" %>
+<%= stylesheet_link_tag "exclusions/liteaccordion" %>
+
+<script type="text/javascript">
+$(function () {
+  setspider();
+  $('.slider').liteAccordion({
+                containerWidth:720, // fixed (px)
+                containerHeight:560, // fixed (px)
+                headerWidth:40, // fixed (px)
+
+                activateOn:'click', // click or mouseover
+                firstSlide:1, // displays slide (n) on page load
+                slideSpeed:300, // slide animation speed
+                onTriggerSlide:function () {
+                }, // callback on slide activate
+                onSlideAnimComplete:function () {
+                }, // callback on slide anim complete
+
+                autoPlay:false, // automatically cycle through slides
+                pauseOnHover:false, // pause on hover
+                cycleSpeed:6000, // time between slide cycles
+                easing:'swing', // custom easing function
+
+                theme:'basic', // basic, dark, light, or stitch
+                rounded:true, // square or rounded corners
+                enumerateSlides:false, // put numbers on slides
+                linkable:false                        // link slides via hash
+              });
+});
+</script>
+
+<% end %>
+
+<!-- /container -->
+
+<div class="row-fluid" style="background: #870c09;">
+  <div class="span4">
+    <br/>
+
+    <img src="/assets/logo.png" class="span4"/>
+    <img src="/assets/hourglass.gif"/>
+
+    <div style="margin-top: -110px;margin-left: 120px;color:white;font-size: 18px">
+      20:36 Hours <br/> on DocuMentor
+      <br/>
+      <br/>
+      <a href="#" class="btn btn-warning btn-large">Take the Quiz</a>
+    </div>
+  </div>
+  <div class="span8">
+    <div class="slider" style="float:right;margin-bottom:0">
+      <ol>
+        <li>
+          <h2><span>Understand DocuMentor</span></h2>
+          <div>
+            <div style="padding:20px;">
+              <br/>
+              <h2>Welcome <%= current_user.email.split('@')[0].humanize %></h2>
+              <div class="row-fluid btxt">
+                <br/>
+                Operations is a function in the bank, which provides multiple services to various businesses and across a wide spectrum of clients. Likely, you will need to interact with us to close any and all deals you
+                strike with your clients. 
+                <br/>
+                <br/>
+                So we decided to create for you a tool that will help you understand us better
+                With this and your co-operation, we hope to realize the path to improved TATs, lower costs, higher
+                efficiency and through it all, delight for you, our customer.
+              </div>
+              <div class="row-fluid blocky" style="margin-top:20px;">
+                <br/>
+                <div class="span3 wbtxt">
+                  Training Plan 
+                </div>
+                <div class="span4">
+                  <div class="progress progress-striped progress-warning span4">
+                    <div class="bar" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="span4 bbtxt" style="margin-left:-20px">
+                  Progress(60%)
+                </div>
+              </div>
+              <div class="row-fluid">
+                <table class="table table-condensed">
+                  <tr>
+                    <th>Objective</th>
+                    <th>Time</th>
+                  </tr>
+                  <tr>
+                    <td>Know Your Operations</td>
+                    <td>6 hours</td>
+                    <td class="complete-check"><i class="icon-check"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Product Tutorials</td>
+                    <td>10 hours</td>
+                    <td class="complete-check"><i class="icon-check"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Checklists</td>
+                    <td>1 hour</td>
+                    <td class="complete-check"><i class="icon-check"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Documents Zone</td>
+                    <td>20 hours</td>
+                    <td class="complete-check hideit"><i class="icon-check"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Quiz</td>
+                    <td>2 hours</td>
+                    <td class="complete-check hideit"><i class="icon-check"></span></td>
+                  </tr>
+                </table>
+              </div>
+              <br/>
+              <div class="row-fluid">
+                <div class="pull-right" style="text-align:right;">
+                  Created by <br/>
+                  <img src="assets/logo_with_name.png" alt="Logo" style="width:100px;height:35px;margin-top:-5px;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h2><span>Know Your Operations</span></h2>
+
+          <div>
+            <div id="spider"></div>
+            <div id="menu">Commercial Operations
+              <div>Sanction Letter Team
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div>
+              <div>Documents Verification Unit
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div>
+              <div>Limit Loading Team
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div>
+              <div>Commercial Loans Team
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div>             
+              <div>Escrow Accounts Management Team
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div> 
+              <div>Document Maintenance Team
+                <a href="/assets/divisions/SanctionLetterTeam/SanctionLetterTeam.html">Know More</a>
+              </div>
+            </div>
+            <div class="info_box">
+              <br/>
+              <div class="pull-left" style="margin-left: 20px;">
+                <h3>How to Use</h3>
+              </div>
+              <div class="pull-right"  style="margin-right: 20px;">
+                <ul>
+                  <li style="font-size: 12px;">Click on an Orange node to expand it</li>
+                  <li style="font-size: 12px;">Click on an Black node to collapse it</li>
+                  <li style="font-size: 12px;">Click on an Blue node to know more</li>
+                  <li style="font-size: 12px;">Click and drag a node to move the tree</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <h2><span>Operational Checklists</span></h2>
+          <div>
+            <div style="padding:20px;">
+              <div style="height:350px;overflow:auto;padding:40px;">
+                <h2>Dos and Don'ts to remember</h2>
+                <br>
+                <ul>
+                  <li>
+                    Legal Documents are adequately stamped/franked as per prevailing stamping rates of the state. Wherever filled in pen - initals / signature required
+                    <br/>
+                    <div style="text-align:right;"><input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                  <li>
+                   Franking/Stamping date is prior or equal to the date of agreement executed .
+                   <br/>
+                   <div style="text-align:right;">
+                    <input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                  <li>
+                    If any party executes the legal documents in vernacular language then a vernacular declaration has to been obtained .                      
+                    <br/>
+                    <div style="text-align:right;"><input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                  <li>
+                    If any party is illeterate / physically handicaped / blind, a seperate declaration has been obtained & Left hand thumb impression for males and right hand thumb impression for
+                    females have been obtained in place of Signature and same is either witnessed by bank official by putting “Thumb impression affixed in my presence” or notarised.
+                    <br/>
+                    <div style="text-align:right;"><input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                  <li>
+                    CIBIL/NCIF report to check ( Except First Group / BBG cases )
+                    <br/>
+                    <div style="text-align:right;"><input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                  <li>
+                    Margin Money receipt available where customer paid directly to dealer. / CA Certificate
+                    <br/>
+                    <div style="text-align:right;"><input type="checkbox" name="sports" value="soccer"  />Read and Understood</div>
+                    <br/>
+                  </li>
+                </ul>
+              </div>
+              <br/>
+              <br/>
+              <div class="blocky" style="padding:10px;">
+                <div>
+                  <h1 style="color:white;width:100%">Checklists:
+
+                    <span style="float:right"><a href="/assets/checklist.xls"><img src="/assets/chk1.png" alt="Pre Sanction Checklist" title="Pre Sanction Checklist" style="width:32px;height:32px"></a>
+                      <a href="/assets/chk2.pdf"><img src="/assets/chk2.png" alt="Loans Checklist" title="Loans Checklist" style="width:32px;height:32px"></a>
+                      <a href="/assets/chk3.pdf"><img src="/assets/chk3.png" alt="Disbursement Checklist" title="Disbursement Checklist" style="width:32px;height:32px"></a></span>
+                  
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li>
+          <h2><span>Product Tutorials</span></h2>
+          <div style="background:black;">
+            <br/>
+            <br/>
+            <h1 style="text-align:center; color:white;">The Product Tutorials</h1>  
+            <div id="border"></div> 
+            <div id="screen"> 
+              <span><img src="/assets/pimg/stl.jpeg" alt="Short Term Loan"></span> 
+              <span><img src="/assets/pimg/mediumterm.jpeg" alt="Long Term Loan"></span> 
+              <span><img src="/assets/pimg/project.jpeg" alt="Project Loan"></span> 
+              <span><img src="/assets/pimg/bridge.jpeg" alt="Bridge Loan"></span> 
+              <span><img src="/assets/pimg/wctl.jpeg" alt="Working Capital Term Loan"></span> 
+              <span><img src="/assets/pimg/wcdl.jpeg" alt="Working Capital Demand Loan"></span> 
+              <span><img src="/assets/pimg/pofinance.jpg" alt="Purchase Order Financing"></span> 
+              <span><img src="/assets/pimg/overdraft.jpeg" alt="Cash Credit / Overdraft"></span> 
+              <span><img src="/assets/pimg/commodity.jpeg" alt="Commodity Funding"></span> 
+              <span><img src="/assets/pimg/promofunding.jpeg" alt="Promoter Funding"></span> 
+              <span><img src="/assets/pimg/portfolio.jpeg" alt="Portfolio Buyouts"></span> 
+              <span><img src="/assets/pimg/lease.jpg" alt="Lease Rental Discounting"></span> 
+              <span><img src="/assets/pimg/fcy.jpg" alt="Foreign Currency Term Loan"></span> 
+              <span><img src="/assets/pimg/droplineod.jpeg" alt="Drop Line OD"></span> 
+              <span><img src="/assets/pimg/gateway.jpg" alt="Single Payment Gateway"></span> 
+              <span><img src="/assets/pimg/trade.jpeg" alt="Trade Advance"></span> 
+            </div> 
+            <div id="caption">Click to explore products </div> 
+
+
+            <script type="text/javascript"> 
+            // starter 
+            siM.init(); 
+            </script> 
+
+          </div>
+        </li>
+
+        <li>
+          <h2><span>Documents</span></h2>
+
+          <div>
+
+            <a href="/docupedia" class="btn btn-inverse" style="overflow:hidden;margin-top:20px;margin-left: 25px;height:240px;width:390px;border-radius: 20px;">
+              <img src="/assets/family-papers-400.jpg" style="margin-left: 200px;margin-top:-10px;height:270px;width:270px">
+
+              <div style="margin-top: -200px;margin-left: -120px;;color:#ffffff; font-size: 48px;">DocuPedia</div>
+              <div style="margin-top: 30px;margin-left: 10px;width:180px;color:white; font-size: 16px;">
+                Look through the database of documents to understand the whats and whys of documentation...
+              </div>
+            </a>
+
+            <a href="http://localhost:3000/practice_landing_page" class="btn btn-warning" style="overflow:hidden;margin-top:20px;margin-left: 25px;height:240px;width:390px;border-radius: 20px;" target="_blank">
+              <img src="/assets/ImportantDocs.jpg" style="margin-left: -240px;margin-top:-10px;height:270px;width:270px">
+
+              <div style="margin-top: -200px;margin-left: 100px;;color:black; font-size: 48px;">DocuMentor</div>
+              <div style="margin-top: 30px;margin-left: 240px;;color:black; font-size: 16px;">
+                Think you are good at documentation? Can you catch all the errors in a document? Find out...
+              </div>
+            </a>
+
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+

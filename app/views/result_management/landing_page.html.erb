@@ -1,0 +1,77 @@
+<h3>You have the following Assignments :</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Case Study Name</th>
+    <th>Quiz Score</th>
+    <th>Docu-check Score</th>
+
+    <th></th>
+
+
+  </tr>
+  <% @assignments.each_with_index.each do |assignment, index| %>
+
+      <tr>
+        <td><%= CaseStudy.find(assignment.case_study_id).name %></td>
+
+        <td><%= (Quiz.find_by_assignment_id(assignment.id).score.to_f / Quiz.find_by_assignment_id(assignment.id).qcount)*100 %>
+          %
+        </td>
+        <td><%= link_to "Show Dockets", show_docket_list_path(assignment.case_study_id, assignment.id) %></td>
+
+      </tr>
+  <% end %>
+
+</table>
+
+<%= content_for :head do %>
+    <style type="text/css">
+    </style>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+
+<% end %>
+
+
+<div class="row-fluid">
+  <div class="span3">
+    <br/>
+    <br/>
+
+    <%= link_to edit_user_registration_path(current_user), :class => "btn btn-large btn-inverse", :style => "text-align: center" do %>
+        <%= image_tag("users.png", :size => "64x64") %>
+        <br/>
+        Profile
+    <% end %>
+    <%= link_to result_landing_page_path, :class => "btn btn-large btn-inverse", :style => "text-align: center" do %>
+        <%= image_tag("results.png", :size => "64x64") %>
+        <br/>
+        Results
+    <% end %>
+    <br/>
+
+    <%= link_to practice_landing_page_path, :class => "btn btn-large btn-inverse", :style => "text-align: center" do %>
+        <%= image_tag("practice.png", :size => "64x64") %>
+        <br/>
+        Practice
+    <% end %>
+    <%= link_to test_landing_page_path, :class => "btn btn-large btn-inverse", :style => "text-align: center" do %>
+        <%= image_tag("tests.png", :size => "64x64") %>
+        <br/>
+        Tests
+    <% end %>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+  <div class="span9">
+    <h1>Welcome to DocuMentor</h1>
+    <br/>
+
+  </div>
+</div>

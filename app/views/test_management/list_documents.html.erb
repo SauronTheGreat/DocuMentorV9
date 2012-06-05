@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <tr>
+    <th>Document Name</th>
+    <th></th>
+  </tr>
+
+  <% @docuchecks.each do |docu| %>
+      <% if !DocketsDocument.find_by_document_id_and_docket_id(docu.document_id,docu.docket_id).reference_document? %>
+      <% if !docu.played %>
+          <tr>
+
+            <td><%= Document.find(docu.document_id).name %></td>
+            <td><%= link_to "Take Test", play_document_test_path(docu.id,1) %></td>
+          </tr>
+      <% end %>
+
+
+  <% end %>
+  <% end %>
+</table>
+
+<%= link_to "Back",list_dockets_path(@assignment.id),:class=>"btn btn-info" %>
